@@ -1,43 +1,13 @@
-//Account, email, password, password==confirmPassword -> create account(setter)
-//Email
-//abc@gmail.com
-//a@b.c
-//123a@1.1
-//-@-.-
-//Only one '@', only on '.'
-//@ should show befroe .
-//no special char
 
-//invalid Email
-//-@@-.- X
-//!@!.! X
-//@. X
-//-@-..- X
-//-@-.-.- X abc@gmail.co.kr X
-
-//Password
-//longer than 8
-//has at least one lowerCase
-//has at least one upperCase
-//has at least one specialChar
-//has at least one number
-//No same char 4 in a row
-//0000abcd X
-//!!!!abcdX
-//!!!aA000 O
-
-//Matching
-//password == confirmingPassword
 #include <iostream>
 #include <vector>
 
 using namespace std;
-//---------------------------
+
 class Account {
 public:
-    //constructor
-    Account() { //As soon as this class is being created, it gets triggerd
-        //cout << "Default constructor" << endl;
+    Account() {
+        
     }
 
     //Email check
@@ -95,23 +65,6 @@ public:
     }
 
 
-/*    bool essentialChar2(string inputEmail) {
-        int count = 0;
-        for(int i = 0; i < inputEmail.size(); i++) {
-            if(inputEmail[i] == '.') {
-                count++;
-            }
-        }
-        return count == 1;
-    } */
-/*
-    bool essentialLocation2(string inputEmail) {
-        if(inputEmail[0] != '.') {
-            return true;
-        }
-        return false;
-    }
-*/
     bool essentialLocation3(string inputEmail) {
         int location = 0;
         for(int i = 0; i < inputEmail.size(); i++) {
@@ -187,7 +140,6 @@ public:
         return false;
     }
 
-    //       includeLowerCase
     bool includeAllChar(string inputPassword) {
         int lower = 0;
         int upper = 0;
@@ -205,25 +157,7 @@ public:
         return (lower > 0) && (upper > 0) && (number > 0);
     }
 
-/*
-    bool includeUpperCase(string inputPassword) {
-        for(int i = 0; i < inputPassword.size(); i++) {
-            if(inputPassword[i] >= 'A' && inputPassword[i] <= 'Z') {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    bool includeNumber(string inputPassword) {
-        for(int i = 0; i < inputPassword.size(); i++) {
-            if(inputPassword[i] >= '0' && inputPassword[i] <= '9') {
-                return true;
-            }
-        }
-        return false;
-    }
-*/
     bool includeSpecialChar(string inputPassword) {
         for(int i = 0; i < inputPassword.size(); i++) {
             if(!(inputPassword[i] >='a' && inputPassword[i] <= 'z')
